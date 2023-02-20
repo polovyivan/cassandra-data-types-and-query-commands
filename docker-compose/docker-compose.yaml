@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  cassandra_db:
+    container_name: cassandra_local_db
+    image: cassandra:4.1.0
+    ports:
+      - "9042:9042"
+    volumes:
+      - ./config/cassandra-config.yaml:/etc/cassandra/cassandra.yaml
+      - ./data/data-for-input.csv:/tmp/data/data-for-input.csv
